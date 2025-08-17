@@ -9,8 +9,8 @@ import Profile from "./pages/Profile";
 import Admin from "./pages/Admin";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
-import ProtectedRoute from "./components/ProtectedRoute";
-import AdminRoute from "./components/AdminRoute";
+import ProtectedRoute from "./pages/ProtectedRoute";
+import AdminRoute from "./pages/AdminRoute";
 
 export default function App() {
   return (
