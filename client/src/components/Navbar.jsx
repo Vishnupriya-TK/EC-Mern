@@ -1,4 +1,4 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 export default function Navbar() {
@@ -23,12 +23,15 @@ export default function Navbar() {
   return (
     <nav className="p-4 bg-blue-600 text-white flex gap-4 justify-between">
       <div className="flex gap-4">
-        <Link to="/">Home</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/packages">Packages</Link>
-        {user && <Link to="/cart">Cart</Link>}
-        {user && <Link to="/profile">Profile</Link>}
-        {user?.role === "admin" && <Link to="/admin">Admin</Link>}
+        <div className="nav-links">
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/about">About</NavLink>
+          <NavLink to="/products">Products</NavLink>
+          <NavLink to="/packages">Packages</NavLink>
+          {user && <NavLink to="/cart">Cart</NavLink>}
+          {user && <NavLink to="/profile">Profile</NavLink>}
+          {user?.role === "admin" && <NavLink to="/admin">Admin</NavLink>}
+        </div>
       </div>
       <div className="flex gap-3">
         {!user ? (
